@@ -70,8 +70,11 @@ footer {
 }
 
 @media (max-width: 600px) {
+ul{
+display:flex;
+}
     nav ul li {
-        display: block;
+        display:;
         text-align: center;
     }
 
