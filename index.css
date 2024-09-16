@@ -1,12 +1,11 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #e9ecef;
-    /* display: flex; */
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    margin-top: 200px;
 }
 
 .countdown {
@@ -16,7 +15,7 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     text-align: center;
     max-width: 900px;
-    width: 200%;
+    width: 100%;
     font-size: 1.5rem;
 }
 
@@ -63,5 +62,3 @@ body {
 .time + .label {
     margin-bottom: 15px;
 }
-
-\
