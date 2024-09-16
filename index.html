@@ -3,63 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href="index.css">
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-  />
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
-<header> 
-    <h1 class="h1">" WELCOME " </h1> 
-    <img src="https://imgs.search.brave.com/P10r0H6WnSEJbswKH1gD9mJXkNtBNWGTR4SSAto0wvw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/bG9nb2pveS5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMTgv/MDUvMTgxNDM5MDEv/ODEwMi03Njh4NTkx/LnBuZw" alt="">
-</header> 
+    <center>
+    <h1> Soon</h1>
+    <div class="countdown">
+        <div id="days" class="time">00</div> days 
+        <div id="hours" class="time">00</div> hours 
+        <div id="minutes" class="time">00</div> minutes 
+        <div id="seconds" class="time">00</div> seconds
+    </div>
+</center>
+    <script src="script.js"></script>
+    <script>
+        // Set the date we're counting down to
+const countDownDate = new Date("oct 14, 2024 15:00:00").getTime();
 
-<nav>
-    <ul>
-        <li><a class="nav-bars" href=""><i class="fa-solid fa-house"></i></a></li>
-        <li><a class="nav-bars" href="https://www.instagram.com/accounts/login/"> <i class="fa-brands fa-instagram"></i></a></li>
-        <li><a class="nav-bars" href=""> <i class="fa-solid fa-bars"></i></i></a></li>
-    </ul>
-</nav>
+// Update the count down every 1 second
+const x = setInterval(function() {
 
-<div class="container">
-    <section>  
-        <h2>Amazon</h2>
-        <p> Welcome goo now !</p>
-        <a href="https://amazon.in" class="button"><i class="fa-brands fa-amazon"></i></a>
-    </section>
+    // Get the current date and time
+    const now = new Date().getTime();
+    
+    // Calculate the remaining time
+    const distance = countDownDate - now;
+    
+    // Calculate days, hours, minutes, and seconds
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Display the result
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+    
+    // If the countdown is over, display a message
+    if (distance < 0) {
+        clearInterval(x);
+        document.querySelector('.countdown').innerHTML = "EXPIRED";
+    }
+}, 1000);
 
-    <section id="about">
-        <h2>Cart</h2>
-        <p>Avaliable soon .</p>
-        <a href="contact-form.html" class="button"><i class="fa-solid fa-cart-shopping"></i></a>
-    </section>
-
-    <section id="services">
-        <h2>Shop</h2>
-        <p> Available soon . </p>
-        <a href="contact-form.html" class="button"><i class="fa-solid fa-shop"></i></i></i></a>
-    </section>
-
-    <section id="contact">
-        <h2>youtube</h2>
-        <p>lets goo and play music ...</p>
-        <a href="https://youtube.com" class="button"><i class="fa-brands fa-youtube"></i></a>
-
-    </section>
-</div>
-&nbsp;
-<h2><center> Launching soon --
-</h2> <center/>
-<a href="https://youtu.be/uBodOFsWgnw?list=RDGMEMQ1dJ7wXfLlqCjwV0xfSNbAVMuBodOFsWgnw" class="new"><i class="fa-solid fa-phone"></i> Contact</a>
-<p class="p"> joining server soon...
-    thanku </p>
-
-<footer>
-    <p>&copy; 2024 HTML/CSS Designed by Anubhav.</p>
-</footer>
-
+    </script>
 </body>
 </html>
